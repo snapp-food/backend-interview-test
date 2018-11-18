@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
@@ -14,22 +15,26 @@ class Product
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"product.detail", "product.list"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"product.detail", "product.list"})
      */
     private $name;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Restaurant", inversedBy="products")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"product.detail"})
      */
-    private $vendor;
+    private $restaurant;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups({"product.detail", "product.list"})
      */
     private $price;
 
@@ -50,14 +55,14 @@ class Product
         return $this;
     }
 
-    public function getVendor(): ?Restaurant
+    public function getRestaurant(): ?Restaurant
     {
-        return $this->vendor;
+        return $this->restaurant;
     }
 
-    public function setVendor(?Restaurant $vendor): self
+    public function setRestaurant(?Restaurant $restaurant): self
     {
-        $this->vendor = $vendor;
+        $this->restaurant = $restaurant;
 
         return $this;
     }

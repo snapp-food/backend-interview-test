@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -17,34 +18,40 @@ class Restaurant
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"restaurant.list", "restaurant.detail"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotNull()
+     * @Groups({"restaurant.list", "restaurant.detail"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotNull()
+     * @Groups({"restaurant.detail"})
      */
     private $status;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Groups({"restaurant.detail"})
      */
     private $address;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotNull()
+     * @Groups({"restaurant.detail"})
      */
     private $phone;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="vendor", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="restaurant", orphanRemoval=true)
+     * @Groups({"restaurant.detail"})
      */
     private $products;
 
@@ -118,7 +125,7 @@ class Restaurant
     {
         if (!$this->products->contains($product)) {
             $this->products[] = $product;
-            $product->setVendor($this);
+            $product->setRestaurant($this);
         }
 
         return $this;
@@ -129,8 +136,8 @@ class Restaurant
         if ($this->products->contains($product)) {
             $this->products->removeElement($product);
             // set the owning side to null (unless already changed)
-            if ($product->getVendor() === $this) {
-                $product->setVendor(null);
+            if ($product->getRestaurant() === $this) {
+                $product->setRestaurant(null);
             }
         }
 
