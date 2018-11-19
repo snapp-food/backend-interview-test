@@ -1,0 +1,291 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SnappFoodInterviewTest",
+		"_postman_id": "b2473b92-2897-237c-afad-c6a082527779",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Restaurant",
+			"description": "",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"url": "http://localhost:8000/restaurant",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"url": "http://localhost:8000/restaurant/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"url": "http://localhost:8000/restaurant",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "restaurant[name]",
+									"value": "new restaurant",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "restaurant[status]",
+									"value": "ACTIVE",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "restaurant[address]",
+									"value": "new restaurant's address",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "restaurant[phone]",
+									"value": "02144556677",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"url": "http://localhost:8000/restaurant/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "restaurant[name]",
+									"value": "new restaurant",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "restaurant[status]",
+									"value": "ACTIVE",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "restaurant[address]",
+									"value": "new restaurant's address",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "restaurant[phone]",
+									"value": "02144556677",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"url": "http://localhost:8000/restaurant/1",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"description": "",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"url": "http://localhost:8000/restaurant/1/product",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"url": "http://localhost:8000/restaurant/1/product/2",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"url": "http://localhost:8000/restaurant/2/product",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "product[name]",
+									"value": "Pizza renamed",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "product[price]",
+									"value": "3000",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"url": "http://localhost:8000/restaurant/1/product/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "product[name]",
+									"value": "Burger renamed",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "product[price]",
+									"value": "2400",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"url": "http://localhost:8000/restaurant/1/product/2",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SMS mockable",
+			"description": "",
+			"item": [
+				{
+					"name": "first_provider",
+					"request": {
+						"url": "https://demo3224310.mockable.io/first_provider",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"message\": \"hello\",\n\t\"cellphone\": \"09125995014\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "second_provider",
+					"request": {
+						"url": "https://demo3224310.mockable.io/second_provider",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"message\": \"hello\",\n\t\"cellphone\": \"09125995014\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
