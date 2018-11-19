@@ -6,7 +6,7 @@ import `SnappFoodInterviewTest.postman_collection.json` into postman.
 
 #Tasks
 
-1.  Create user register and login and then user authentication for APIs:
+1.  Create user register and login endpoints and then user authentication for APIs:
 
     1.  create a controller with two `login` and `register` actions. You must add a `cellphone` column to `User` entity.
         On `login` endpoint you must generate an access token and send that to the user in response.
