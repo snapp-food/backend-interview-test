@@ -17,13 +17,13 @@ import `SnappFoodInterviewTest.postman_collection.json` into postman.
 
     1.  Create `Order` entity with these columns:
 
-        * vendor_id
+        * restaurant_id
         * created_at
         * updated_at
         * user_id
         * status
 
-    2.  Orders must have some products that belong to only one vendor.
+    2.  Orders must have some products that belong to only one restaurant.
 
     3.  Create a controller to submit order
         
@@ -38,4 +38,3 @@ import `SnappFoodInterviewTest.postman_collection.json` into postman.
     `ROLE_ADMIN` role) can create and modify restaurants and products.
     
 6.  [optional] Add endpoints to accept and reject orders. This endpoint must be accessible by admin users.
-  
