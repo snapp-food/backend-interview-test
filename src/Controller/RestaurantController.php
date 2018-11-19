@@ -28,7 +28,7 @@ class RestaurantController extends AbstractController
     {
         $paginator = $repository->paginate($request->query->get('page', 1), $request->query->get('size', 20));
 
-        return $this->json($paginator);
+        return $this->json($paginator, Response::HTTP_OK, [], ['groups' => ['restaurant.list']]);
     }
 
     /**

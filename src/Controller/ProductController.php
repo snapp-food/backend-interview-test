@@ -36,7 +36,7 @@ class ProductController extends AbstractController
             $request->query->get('size', 20)
         );
 
-        return $this->json($paginator, 200, [], ['groups' => ['product.detail', 'restaurant.list']]);
+        return $this->json($paginator, 200, [], ['groups' => ['product.list']]);
     }
 
     /**

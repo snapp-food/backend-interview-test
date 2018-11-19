@@ -32,20 +32,20 @@ class Restaurant
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotNull()
-     * @Groups({"restaurant.detail"})
+     * @Groups({"restaurant.list", "restaurant.detail"})
      */
     private $status;
 
     /**
      * @ORM\Column(type="text", nullable=true)
-     * @Groups({"restaurant.detail"})
+     * @Groups({"restaurant.list", "restaurant.detail"})
      */
     private $address;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotNull()
-     * @Groups({"restaurant.detail"})
+     * @Groups({"restaurant.list", "restaurant.detail"})
      */
     private $phone;
 
