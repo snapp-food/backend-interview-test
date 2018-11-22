@@ -37,4 +37,4 @@ import `SnappFoodInterviewTest.postman_collection.json` into postman.
 5.  [optional] Add an authorization layer for checking access to endpoints. For example only admin users (users with 
     `ROLE_ADMIN` role) can create and modify restaurants and products.
     
-6.  [optional] Add endpoints to list, accept and reject orders. These endpoints must be accessible by admin users.
+6.  [optional] Add endpoints to list and modify orders. These endpoints must be accessible by admin users.
